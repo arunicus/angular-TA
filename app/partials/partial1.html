@@ -1,0 +1,22 @@
+
+<form class="form-horizontal" id="tda-login-form" ng-submit="loginSubmit()">
+	<legend> Login </legend>
+
+	<div class="control-group">
+		<label class="control-label" for="inputUsername">User Name</label>
+		<div class="controls">
+			<input type="text" ng-model="username" value="aruntrade01" id="inputUsername" placeholder="User Name"/>
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="inputPassword" placeholder="Password">Password</Label>
+		<div class="controls">
+			<input type="password" ng-model="password" value="test123" id="inputPassword"/>
+		</div>
+	</div>
+	<div class="control-group">
+		<div class="controls">
+			<button type="submit" class="btn btn-success" id="loginButton"> Login </button>
+		</div>
+	</div>
+</form>
