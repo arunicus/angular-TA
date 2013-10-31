@@ -4,7 +4,7 @@
 
 angular.module('myApp.controllers', []).
   controller('MyCtrl1', ['$location','$scope','Phone','Phone1' , function($location,$scope,greeter,greeter1) {
-  	$scope.test = "testing";
+  	$scope.view2 = "partials/partial2.html";
   
   	$scope.loginSubmit = function() {
 	    //alert('submit login ' + $scope.username);
@@ -12,22 +12,35 @@ angular.module('myApp.controllers', []).
 	    
   	};
   	
-  	$scope.loginSuccess = function(data) {
+  	$scope.loginSuccess = function(tdauser) {
 		// convert data in JSON from XML
 		// Save Response
-		console.log("parsing xml login response");
-		var xml = parseXml(data);
-		var jsonResponse = xmlToJson(xml);
-		console.log(jsonResponse);
+      $location.path('/view2');
+      $scope.$apply();
   	};
   	
-  	$scope.loginFailure = function(data) {
-		console.log(data);
+  	$scope.loginFailure = function(message) {
+		    alert(message);
   	};
   	
   	
 
   }])
-  .controller('MyCtrl2', [function() {
+  .controller('MyCtrl2', ['$location','tdauser','userwatchlist','$scope','watchservice',
+      function($location,tdauser,userwatchlist,$scope,watchservice) {
+
+      $scope.init = function(){
+        if(tdauser.loggedin){
+         watchservice.getwatchservice($scope.getWatchListSuccess,$scope.getWatchListSuccess);
+        }else{
+          console.log('not logged');
+          $location.path('/login');
+        }
+
+      };
+      $scope.init();
+
+      $scope.getWatchListSuccess = function() {
+      };
 
   }]);

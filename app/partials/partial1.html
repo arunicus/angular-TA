@@ -5,13 +5,13 @@
 	<div class="control-group">
 		<label class="control-label" for="inputUsername">User Name</label>
 		<div class="controls">
-			<input type="text" ng-model="username" value="aruntrade01" id="inputUsername" placeholder="User Name"/>
+			<input type="text" ng-model="username" id="inputUsername" placeholder="User Name"/>
 		</div>
 	</div>
 	<div class="control-group">
 		<label class="control-label" for="inputPassword" placeholder="Password">Password</Label>
 		<div class="controls">
-			<input type="password" ng-model="password" value="test123" id="inputPassword"/>
+			<input type="password" ng-model="password" id="inputPassword"/>
 		</div>
 	</div>
 	<div class="control-group">
@@ -19,4 +19,7 @@
 			<button type="submit" class="btn btn-success" id="loginButton"> Login </button>
 		</div>
 	</div>
+	<div class="example-animate-container">
+        <div class="include-example" ng-include="view2"></div>
+     </div>
 </form>
