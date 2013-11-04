@@ -24,6 +24,7 @@ angular.module('myApp.services', []).
                                     //tdauser=jsonResponse.amtd["xml-log-in"];
                                     tdauser["session-id"] = jsonResponse.amtd['xml-log-in']['session-id'];
                                     tdauser.loggedin = true;
+                                    tdauser.userProfileModel = jsonResponse.amtd["xml-log-in"];
                                     successFunction(tdauser);
                                   }else{
                                     tdauser.loggedin = false;

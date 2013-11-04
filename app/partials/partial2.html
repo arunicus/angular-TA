@@ -1,4 +1,25 @@
 <p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter: <h1>Hello {{username}}!</h1>
-</p>
+
+
+  <table class="table table-hover tablesorter-bootstrap">
+  		<thead>
+				<tr>
+					<th>SYMBOL</th>
+					<th id="SYMBOL1">BID</th>
+					<th id="SYMBOL2">ASK</th>
+					<th id="SYMBOL3">LAST</th>
+					<th id="SYMBOL4">CHANG</th>
+					<th id="SYMBOL5">%CHANG</th>
+				</tr>
+		</thead>
+		<tbody>
+	        <tr ng-repeat="wl in wlarray" >
+	            <td>{{ wl.symbol }}</td>
+	            <td>{{ wl.asset.bid }}</td>
+	            <td>{{ wl.asset.ask }}</td>
+	            <td>{{ wl.asset.last }}</td>
+	            <td>{{ wl.asset.change }}</td>
+	            <td>{{ wl.asset.changepercent }}</td>
+	        </tr>
+	    </tbody>
+    </table>
